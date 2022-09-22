@@ -20,7 +20,14 @@ namespace MiniKindleApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LibraryView());
+
+            LibraryModel library = new LibraryModel();
+            LibraryView libraryView = new LibraryView();
+
+            Controller controller = new Controller(library, libraryView.DisplayState);
+            libraryView.SetController(controller.HandleEvents);
+
+            Application.Run(libraryView);
         }
     }
 }

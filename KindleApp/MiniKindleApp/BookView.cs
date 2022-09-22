@@ -12,34 +12,41 @@ namespace MiniKindleApp
 {
     public partial class BookView : Form
     {
+        private HandleEventsDel handleDel;
+
         public BookView()
         {
             InitializeComponent();
         }
 
+        public void SetController(HandleEventsDel c)
+        {
+            handleDel = c;
+        }
+
         private void backButton_Click(object sender, EventArgs e)
         {
-
+            handleDel(State.PAGEBACKWARDS, "");
         }
 
         private void removeMarkButton_Click(object sender, EventArgs e)
         {
-
+            handleDel(State.REMOVEBOOKMARK, "");
         }
 
         private void goToPageButton_Click(object sender, EventArgs e)
         {
-
+            handleDel(State.GOTOPAGE, "");
         }
 
         private void setMarkButton_Click(object sender, EventArgs e)
         {
-
+            handleDel(State.SETBOOKMARK, "");
         }
 
         private void nextPageButton_Click(object sender, EventArgs e)
         {
-
+            handleDel(State.PAGEFORWARDS, "");
         }
     }
 }
