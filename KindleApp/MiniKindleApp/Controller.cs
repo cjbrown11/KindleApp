@@ -30,6 +30,7 @@ namespace MiniKindleApp
         {
             libraryModel = m;
             displayDel = d;
+
         }
 
         public void HandleEvents(State state, String args)
@@ -60,5 +61,8 @@ namespace MiniKindleApp
                     break;
             }
         }
+
+        
+
     }
 }

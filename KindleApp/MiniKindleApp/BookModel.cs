@@ -24,6 +24,12 @@ namespace MiniKindleApp
 
         public int currentPage { get => curPage; set => curPage = value; }
 
-        public int totalPages { get => totPages; set => totPages = value; } 
+        public int totalPages { get => totPages; set => totPages = value; }
+
+        
+
+        public BookModel() { }
+
+        
     }
 }

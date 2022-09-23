@@ -63,9 +63,11 @@ namespace MiniKindleApp
             handleDel(State.OPENBOOK, "");
         }
 
-        private void bookListView_SelectedIndexChanged(object sender, EventArgs e)
+        public void bookListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             handleDel(State.SELECTBOOK, "");
+            
         }
     }
 }

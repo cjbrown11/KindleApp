@@ -39,9 +39,10 @@ namespace MiniKindleApp
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(30, 672);
+            this.backButton.Location = new System.Drawing.Point(15, 349);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(77, 76);
+            this.backButton.Size = new System.Drawing.Size(38, 40);
             this.backButton.TabIndex = 0;
             this.backButton.Text = "<<";
             this.backButton.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@ namespace MiniKindleApp
             // 
             // removeMarkButton
             // 
-            this.removeMarkButton.Location = new System.Drawing.Point(155, 672);
+            this.removeMarkButton.Location = new System.Drawing.Point(78, 349);
+            this.removeMarkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.removeMarkButton.Name = "removeMarkButton";
-            this.removeMarkButton.Size = new System.Drawing.Size(127, 76);
+            this.removeMarkButton.Size = new System.Drawing.Size(64, 40);
             this.removeMarkButton.TabIndex = 1;
             this.removeMarkButton.Text = "Remove Bookmark";
             this.removeMarkButton.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@ namespace MiniKindleApp
             // 
             // goToPageButton
             // 
-            this.goToPageButton.Location = new System.Drawing.Point(324, 672);
+            this.goToPageButton.Location = new System.Drawing.Point(162, 349);
+            this.goToPageButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.goToPageButton.Name = "goToPageButton";
-            this.goToPageButton.Size = new System.Drawing.Size(124, 76);
+            this.goToPageButton.Size = new System.Drawing.Size(62, 40);
             this.goToPageButton.TabIndex = 2;
             this.goToPageButton.Text = "Go To Page";
             this.goToPageButton.UseVisualStyleBackColor = true;
@@ -69,9 +72,10 @@ namespace MiniKindleApp
             // 
             // setMarkButton
             // 
-            this.setMarkButton.Location = new System.Drawing.Point(494, 672);
+            this.setMarkButton.Location = new System.Drawing.Point(247, 349);
+            this.setMarkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.setMarkButton.Name = "setMarkButton";
-            this.setMarkButton.Size = new System.Drawing.Size(121, 76);
+            this.setMarkButton.Size = new System.Drawing.Size(60, 40);
             this.setMarkButton.TabIndex = 3;
             this.setMarkButton.Text = "Set Bookmark";
             this.setMarkButton.UseVisualStyleBackColor = true;
@@ -79,9 +83,10 @@ namespace MiniKindleApp
             // 
             // nextPageButton
             // 
-            this.nextPageButton.Location = new System.Drawing.Point(672, 672);
+            this.nextPageButton.Location = new System.Drawing.Point(336, 349);
+            this.nextPageButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nextPageButton.Name = "nextPageButton";
-            this.nextPageButton.Size = new System.Drawing.Size(78, 76);
+            this.nextPageButton.Size = new System.Drawing.Size(39, 40);
             this.nextPageButton.TabIndex = 4;
             this.nextPageButton.Text = ">>";
             this.nextPageButton.UseVisualStyleBackColor = true;
@@ -90,23 +95,25 @@ namespace MiniKindleApp
             // bookViewBox
             // 
             this.bookViewBox.FormattingEnabled = true;
-            this.bookViewBox.ItemHeight = 25;
-            this.bookViewBox.Location = new System.Drawing.Point(30, 37);
+            this.bookViewBox.Location = new System.Drawing.Point(15, 19);
+            this.bookViewBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookViewBox.Name = "bookViewBox";
-            this.bookViewBox.Size = new System.Drawing.Size(712, 604);
+            this.bookViewBox.Size = new System.Drawing.Size(358, 316);
             this.bookViewBox.TabIndex = 5;
+            this.bookViewBox.SelectedIndexChanged += new System.EventHandler(this.bookViewBox_SelectedIndexChanged);
             // 
             // BookView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 777);
+            this.ClientSize = new System.Drawing.Size(400, 404);
             this.Controls.Add(this.bookViewBox);
             this.Controls.Add(this.nextPageButton);
             this.Controls.Add(this.setMarkButton);
             this.Controls.Add(this.goToPageButton);
             this.Controls.Add(this.removeMarkButton);
             this.Controls.Add(this.backButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookView";
             this.Text = "BookView";
             this.ResumeLayout(false);

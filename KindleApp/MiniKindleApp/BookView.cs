@@ -48,5 +48,10 @@ namespace MiniKindleApp
         {
             handleDel(State.PAGEFORWARDS, "");
         }
+
+        private void bookViewBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
