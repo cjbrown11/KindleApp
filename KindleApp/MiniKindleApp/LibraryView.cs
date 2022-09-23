@@ -51,6 +51,7 @@ namespace MiniKindleApp
         public void SetController(HandleEventsDel c)
         {
             handleDel = c;
+            handleDel(State.START, "");
         }
 
         private void synchronizeButton_Click(object sender, EventArgs e)

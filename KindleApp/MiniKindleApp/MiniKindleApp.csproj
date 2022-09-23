@@ -97,5 +97,8 @@
   <ItemGroup>
     <Folder Include="LibraryData\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

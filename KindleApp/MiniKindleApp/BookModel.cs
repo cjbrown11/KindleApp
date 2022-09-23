@@ -8,28 +8,16 @@ namespace MiniKindleApp
 {
     public class BookModel
     {
-        private string name;
-        private int curPage;
-        private int totPages;
-        private List<int> bookmarks = new List<int>();
+        private string title;
+        private List<int> _bookmarks = new List<int>();
+        
+        public List<string> Pages = new List<string>();
 
-        public BookModel(string title, int page, int pages)
+        public BookModel(string title)
         {
-            bookName = title;
-            currentPage = page;
-            totalPages = pages;
+            BookName = title;
         }
         
-        public string bookName { get => name; set => name = value; }
-
-        public int currentPage { get => curPage; set => curPage = value; }
-
-        public int totalPages { get => totPages; set => totPages = value; }
-
-        
-
-        public BookModel() { }
-
-        
+        public string BookName { get => title; set => title = value; }
     }
 }

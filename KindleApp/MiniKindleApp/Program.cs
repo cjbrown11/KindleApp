@@ -20,18 +20,13 @@ namespace MiniKindleApp
         [STAThread]
         static void Main()
         {
-            Book book1 = new Book();
-            book1.Title = "Poop";
-            book1.Pages = ;
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            LibraryModel library = new LibraryModel(@"C:\Users\jcrig\source\repos\KindleApp1\KindleApp\KindleApp\bin\book\book1.txt");
+            LibraryModel library = new LibraryModel(@"C:\Users\Casey Ring\Source\Repos\EC\KindleApp\MiniKindleApp\Library.txt");
             LibraryView libraryView = new LibraryView();
 
-            Controller controller = new Controller(library, libraryView.DisplayState);
+            Controller controller = new Controller(library, libraryView, libraryView.DisplayState);
             libraryView.SetController(controller.HandleEvents);
 
             Application.Run(libraryView);
