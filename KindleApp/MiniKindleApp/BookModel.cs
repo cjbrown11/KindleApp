@@ -8,16 +8,22 @@ namespace MiniKindleApp
 {
     public class BookModel
     {
-        //field: List of books in library
+        private string name;
+        private int curPage;
+        private int totPages;
+        private List<int> bookmarks = new List<int>();
 
-        //field: List of books in cloud
-
-        //constructor: set books in library w/ helper method
-        public BookModel()
+        public BookModel(string title, int page, int pages)
         {
-            
+            bookName = title;
+            currentPage = page;
+            totalPages = pages;
         }
+        
+        public string bookName { get => name; set => name = value; }
 
-        //helper method: read books from text files and add to list
+        public int currentPage { get => curPage; set => curPage = value; }
+
+        public int totalPages { get => totPages; set => totPages = value; } 
     }
 }
