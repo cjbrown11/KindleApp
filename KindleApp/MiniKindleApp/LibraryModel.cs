@@ -9,15 +9,20 @@ namespace MiniKindleApp
 {
     public class LibraryModel : LibraryView
     {
-        public List<BookModel> libraryList = new List<BookModel>();
         
-        public LibraryModel(string file)
+        
+        public LibraryModel()
         {
-            RefreshBookList(file);
+
+            Setbooks();
         }
+
+        
 
         public void RefreshBookList(string file)
         {
+
+            /*
             string line;
             BookModel book = new BookModel("");
             using (StreamReader sr = new StreamReader(file))
@@ -34,7 +39,37 @@ namespace MiniKindleApp
                 }
                 libraryList.Add(book);
             }
+            */
+
+
         }
+
+        BookModel HungerGames = new BookModel();
+
+        BookModel LordOfTheRings = new BookModel();
+
+        BookModel BattleStarGalactica = new BookModel();
+
+        public List<BookModel> BookList = new List<BookModel>();
+
+        public void Setbooks()
+        {
+            string lord = "Lord Of The Rings";
+            string hunger = "Hunger Games";
+            LordOfTheRings.Title = lord;
+            LordOfTheRings.Pages = 100;
+            HungerGames.Title = hunger;
+            HungerGames.Pages = 69;
+            BattleStarGalactica.Title = "Battle Star Galactica";
+            BattleStarGalactica.Pages = 369;
+
+            BookList.Add(HungerGames);
+            BookList.Add(LordOfTheRings);
+            BookList.Add(BattleStarGalactica);
+
+        }
+
+        
     }
 }
         

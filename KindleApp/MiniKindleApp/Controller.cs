@@ -29,6 +29,8 @@ namespace MiniKindleApp
 
         private DisplayStateDel displayDel;
 
+        private CloudLibrary cloudLibrary;
+
         public Controller(LibraryModel m, LibraryView v, DisplayStateDel d)
         {
             libraryModel = m;
@@ -46,6 +48,7 @@ namespace MiniKindleApp
                     break;
                 case State.SYNC:
                     displayDel(State.SYNC);
+                    Synchronize();
                     break;
                 case State.OPENBOOK:
                     displayDel(State.OPENBOOK);
@@ -75,16 +78,26 @@ namespace MiniKindleApp
                     break;
             }
         }
-
+        
         private void RefreshBookListView()
         {
 
             libraryView.bookListView.Clear();
-            foreach (BookModel b in libraryModel.libraryList)
+            foreach (BookModel b in libraryModel.BookList)
             {
-                libraryView.bookListView.Items.Add(b.BookName);
+                libraryView.bookListView.Items.Add(b.Title);
             }
             libraryView.bookListView.Show();
+        }
+        
+
+
+        public void Synchronize()
+        {
+            for(int i = 0; i < cloudLibrary.BookList.Count; i++)
+            {
+                libraryModel.BookList.Add(cloudLibrary.BookList[i]);
+            }
         }
     }
 }

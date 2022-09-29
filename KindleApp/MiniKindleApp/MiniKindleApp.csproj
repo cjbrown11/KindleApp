@@ -55,7 +55,9 @@
     <Compile Include="BookView.Designer.cs">
       <DependentUpon>BookView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CloudLibrary.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="DefaultLibrary.cs" />
     <Compile Include="LibraryModel.cs" />
     <Compile Include="LibraryView.cs">
       <SubType>Form</SubType>

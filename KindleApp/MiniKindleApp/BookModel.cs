@@ -8,16 +8,47 @@ namespace MiniKindleApp
 {
     public class BookModel
     {
+
+
         private string title;
         private List<int> _bookmarks = new List<int>();
-        
-        public List<string> Pages = new List<string>();
 
-        public BookModel(string title)
+        private int _pages = 1;
+
+        public int Pages
         {
-            BookName = title;
+            get => _pages;
+            set
+            {
+                _pages = value;
+            }
+        }
+
+        public string Title
+        {
+            get => title;
+            set
+            {
+                title = value;
+            }
+            
+        }
+
+        public List<int> Bookmarks
+        {
+            get => _bookmarks;
+            set
+            {
+                _bookmarks = value;
+            }
         }
         
-        public string BookName { get => title; set => title = value; }
+        //public string BookName { get => title; set => title = value; }
+
+        
+        
+        
+
+        
     }
 }

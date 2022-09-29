@@ -12,7 +12,7 @@ namespace MiniKindleApp
 
         public List<BookMark> BookMarks { get => _bookMarks; set { _bookMarks = value; } }
 
-        private string _title = "shit";
+        private string _title = "yes";
         public string Title
         { get => _title;
             set 

@@ -23,7 +23,7 @@ namespace MiniKindleApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            LibraryModel library = new LibraryModel(@"C:\Users\Casey Ring\Source\Repos\EC\KindleApp\MiniKindleApp\Library.txt");
+            //LibraryModel library = new LibraryModel(@"C:\Users\Casey Ring\Source\Repos\EC\KindleApp\MiniKindleApp\Library.txt");
             LibraryView libraryView = new LibraryView();
 
             Controller controller = new Controller(library, libraryView, libraryView.DisplayState);
@@ -33,19 +33,5 @@ namespace MiniKindleApp
         }
     }
 
-    /*
-     Rigdon's raw thoughts @ 1 am for whoever works on this next:
-        i dont think our original idea of having a book just be a txt.file is
-        going to work. Becauseeee, i think book has to be it's own object, that you
-        can assigns things to such as a bookmark that will be stored in the book,
-        or even page numbers so that the user can type in a page and go to that page,
-        . I couldnt figure out how to get a txt file to read into the library view (as you will
-        see in my failed attempts that are half commented out) soooo, yeah. 
-        Also dont think we necesarily have to show content in the book view
-        maybe just some predefined books that we predefine in the code that are of type 'book', and when we go
-        back and forth betweenn pages, it shows what page we are on, as well as if there
-        is a bookmark on that page. as well as some books that will get added to the 
-        
-        
-     */
+    
 }
