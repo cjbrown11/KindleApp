@@ -18,12 +18,35 @@ namespace MiniKindleApp
         public BookView(LibraryView view)
         {
             InitializeComponent();
-            pageNumber = view.bookListView.SelectedItem.ToString(pageNumber);
+            BookModel bm = new BookModel();
+            bm = (BookModel)view.bookListView.SelectedItem;
+            pageNumber.Text = bm.CurrentPage.ToString();
         }
 
         public void SetController(HandleEventsDel c)
         {
             handleDel = c;
+        }
+
+        public void DisplayState(State state)
+        {
+            switch (state)
+            {
+                case State.CLOSEBOOK:
+                    break;
+                case State.SETBOOKMARK:
+                    break;
+                case State.GOTOPAGE:
+                    break;
+                case State.REMOVEBOOKMARK:
+                    break;
+                case State.PAGEFORWARDS:
+                    break;
+                case State.PAGEBACKWARDS:
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void backButton_Click(object sender, EventArgs e)

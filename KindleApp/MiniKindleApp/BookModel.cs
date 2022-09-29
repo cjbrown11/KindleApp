@@ -9,11 +9,21 @@ namespace MiniKindleApp
     public class BookModel
     {
 
-
         private string title;
         private List<int> _bookmarks = new List<int>();
 
-        private int _pages = 1;
+        private int _pages;
+
+        private int _currentPage = 1;
+
+        public int CurrentPage
+        {
+            get => _currentPage;
+            set
+            {
+                _currentPage = value;
+            }
+        }
 
         public int Pages
         {
@@ -42,13 +52,17 @@ namespace MiniKindleApp
                 _bookmarks = value;
             }
         }
-        
+
         //public string BookName { get => title; set => title = value; }
 
-        
-        
-        
+        public override string ToString()
+        {
+            // choose any format that suits you and display what you like
+            return String.Format(this.Title);
+        }
 
-        
+
+
+
     }
 }

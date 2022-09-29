@@ -10,7 +10,6 @@ namespace MiniKindleApp
     public class LibraryModel : LibraryView
     {
         
-        
         public LibraryModel()
         {
 
