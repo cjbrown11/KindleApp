@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MiniKindleApp
 {
@@ -31,11 +32,12 @@ namespace MiniKindleApp
 
         private CloudLibrary cloudLibrary;
 
-        public Controller(LibraryModel m, LibraryView v, DisplayStateDel d)
+        public Controller(LibraryModel m, LibraryView v, DisplayStateDel d, CloudLibrary c)
         {
             libraryModel = m;
             libraryView = v;
             displayDel = d;
+            cloudLibrary = c;
         }
 
         public void HandleEvents(State state, String args)
@@ -49,9 +51,11 @@ namespace MiniKindleApp
                 case State.SYNC:
                     displayDel(State.SYNC);
                     Synchronize();
+                    RefreshBookListView();
                     break;
                 case State.OPENBOOK:
                     displayDel(State.OPENBOOK);
+                    Selectbook();
                     break;
                 case State.CLOSEBOOK:
                     displayDel(State.CLOSEBOOK);
@@ -81,9 +85,8 @@ namespace MiniKindleApp
         
         private void RefreshBookListView()
         {
-
-            libraryView.bookListView.Clear();
-            foreach (BookModel b in libraryModel.BookList)
+            libraryView.bookListView.Items.Clear();
+            foreach(BookModel b in libraryModel.BookList)
             {
                 libraryView.bookListView.Items.Add(b.Title);
             }
@@ -97,6 +100,16 @@ namespace MiniKindleApp
             for(int i = 0; i < cloudLibrary.BookList.Count; i++)
             {
                 libraryModel.BookList.Add(cloudLibrary.BookList[i]);
+            }
+        }
+
+        public void Selectbook()
+        {
+            if (libraryView.bookListView.SelectedItem == null) MessageBox.Show("Select a book to view");
+            else
+            {
+                BookView bookview = new BookView(libraryView);
+                bookview.ShowDialog();
             }
         }
     }

@@ -31,15 +31,15 @@ namespace MiniKindleApp
         {
             this.synchronizeButton = new System.Windows.Forms.Button();
             this.selectButton = new System.Windows.Forms.Button();
-            this.bookListView = new System.Windows.Forms.ListView();
+            this.bookListView = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // synchronizeButton
             // 
-            this.synchronizeButton.Location = new System.Drawing.Point(67, 353);
+            this.synchronizeButton.Location = new System.Drawing.Point(50, 287);
             this.synchronizeButton.Margin = new System.Windows.Forms.Padding(2);
             this.synchronizeButton.Name = "synchronizeButton";
-            this.synchronizeButton.Size = new System.Drawing.Size(114, 49);
+            this.synchronizeButton.Size = new System.Drawing.Size(86, 40);
             this.synchronizeButton.TabIndex = 1;
             this.synchronizeButton.Text = "Synchronize";
             this.synchronizeButton.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@ namespace MiniKindleApp
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(229, 353);
+            this.selectButton.Location = new System.Drawing.Point(172, 287);
             this.selectButton.Margin = new System.Windows.Forms.Padding(2);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(105, 49);
+            this.selectButton.Size = new System.Drawing.Size(79, 40);
             this.selectButton.TabIndex = 2;
             this.selectButton.Text = "Select";
             this.selectButton.UseVisualStyleBackColor = true;
@@ -58,19 +58,18 @@ namespace MiniKindleApp
             // 
             // bookListView
             // 
-            this.bookListView.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.bookListView.HideSelection = false;
-            this.bookListView.Location = new System.Drawing.Point(29, 33);
+            this.bookListView.FormattingEnabled = true;
+            this.bookListView.Location = new System.Drawing.Point(30, 35);
             this.bookListView.Name = "bookListView";
-            this.bookListView.Size = new System.Drawing.Size(354, 290);
-            this.bookListView.TabIndex = 3;
-            this.bookListView.UseCompatibleStateImageBehavior = false;
+            this.bookListView.Size = new System.Drawing.Size(235, 212);
+            this.bookListView.TabIndex = 4;
+            this.bookListView.SelectedIndexChanged += new System.EventHandler(this.bookListView_SelectedIndexChanged_2);
             // 
             // LibraryView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 435);
+            this.ClientSize = new System.Drawing.Size(309, 353);
             this.Controls.Add(this.bookListView);
             this.Controls.Add(this.selectButton);
             this.Controls.Add(this.synchronizeButton);
@@ -84,7 +83,7 @@ namespace MiniKindleApp
         #endregion
         private System.Windows.Forms.Button synchronizeButton;
         private System.Windows.Forms.Button selectButton;
-        public System.Windows.Forms.ListView bookListView;
+        public System.Windows.Forms.ListBox bookListView;
     }
 }
 

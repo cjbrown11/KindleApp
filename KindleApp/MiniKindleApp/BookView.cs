@@ -13,10 +13,12 @@ namespace MiniKindleApp
     public partial class BookView : Form
     {
         private HandleEventsDel handleDel;
+        public static LibraryView instance;
 
-        public BookView()
+        public BookView(LibraryView view)
         {
             InitializeComponent();
+            pageNumber = view.bookListView.SelectedItem.ToString(pageNumber);
         }
 
         public void SetController(HandleEventsDel c)
@@ -50,6 +52,11 @@ namespace MiniKindleApp
         }
 
         private void bookViewBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pageNumber_TextChanged(object sender, EventArgs e)
         {
 
         }

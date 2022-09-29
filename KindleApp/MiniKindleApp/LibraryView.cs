@@ -57,11 +57,13 @@ namespace MiniKindleApp
         private void synchronizeButton_Click(object sender, EventArgs e)
         {
             handleDel(State.SYNC, "");
+            synchronizeButton.Enabled = false;
         }
 
         private void selectButton_Click(object sender, EventArgs e)
         {
             handleDel(State.OPENBOOK, "");
+            
         }
 
         public void bookListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,6 +71,16 @@ namespace MiniKindleApp
             
             handleDel(State.SELECTBOOK, "");
             
+        }
+
+        private void bookListView_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookListView_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

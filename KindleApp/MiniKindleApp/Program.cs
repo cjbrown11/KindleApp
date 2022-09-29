@@ -23,10 +23,11 @@ namespace MiniKindleApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            //LibraryModel library = new LibraryModel(@"C:\Users\Casey Ring\Source\Repos\EC\KindleApp\MiniKindleApp\Library.txt");
+            LibraryModel library = new LibraryModel();
             LibraryView libraryView = new LibraryView();
+            CloudLibrary cloud = new CloudLibrary();
 
-            Controller controller = new Controller(library, libraryView, libraryView.DisplayState);
+            Controller controller = new Controller(library, libraryView, libraryView.DisplayState, cloud);
             libraryView.SetController(controller.HandleEvents);
 
             Application.Run(libraryView);
