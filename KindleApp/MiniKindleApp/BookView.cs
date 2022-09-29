@@ -25,7 +25,7 @@ namespace MiniKindleApp
             bm = (BookModel)view.bookListView.SelectedItem;
             pages = bm.Pages;
             pageNumber.Text = bm.CurrentPage.ToString();
-            pageText.Text = bm.Title;
+            bookTitle.Text = bm.Title;
             if (bm.CurrentPage == 1) backButton.Enabled = false;
             if (bm.CurrentPage == bm.Pages) nextPageButton.Enabled = false;
             bookmarks = bm.Bookmarks;
@@ -96,6 +96,7 @@ namespace MiniKindleApp
             {
                 this.pageNumber.Text = gotoPage.Text;
             }
+            check_Bookmark();
         }
 
         private void setMarkButton_Click(object sender, EventArgs e)

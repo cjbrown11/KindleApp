@@ -40,6 +40,8 @@ namespace MiniKindleApp
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.gotoPage = new System.Windows.Forms.TextBox();
             this.pageText = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bookTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // backButton
@@ -98,7 +100,7 @@ namespace MiniKindleApp
             this.pageNumber.Location = new System.Drawing.Point(222, 18);
             this.pageNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pageNumber.Name = "pageNumber";
-            this.pageNumber.Size = new System.Drawing.Size(148, 26);
+            this.pageNumber.Size = new System.Drawing.Size(219, 26);
             this.pageNumber.TabIndex = 6;
             // 
             // bookMark
@@ -107,7 +109,7 @@ namespace MiniKindleApp
             this.bookMark.Location = new System.Drawing.Point(222, 58);
             this.bookMark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bookMark.Name = "bookMark";
-            this.bookMark.Size = new System.Drawing.Size(148, 26);
+            this.bookMark.Size = new System.Drawing.Size(219, 26);
             this.bookMark.TabIndex = 7;
             // 
             // textBox3
@@ -128,7 +130,7 @@ namespace MiniKindleApp
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(148, 26);
             this.textBox4.TabIndex = 9;
-            this.textBox4.Text = "BookMark";
+            this.textBox4.Text = "Bookmark";
             // 
             // gotoPage
             // 
@@ -140,18 +142,37 @@ namespace MiniKindleApp
             // 
             // pageText
             // 
-            this.pageText.Location = new System.Drawing.Point(86, 121);
+            this.pageText.Location = new System.Drawing.Point(86, 133);
             this.pageText.Multiline = true;
             this.pageText.Name = "pageText";
-            this.pageText.Size = new System.Drawing.Size(413, 375);
+            this.pageText.Size = new System.Drawing.Size(413, 363);
             this.pageText.TabIndex = 11;
             this.pageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(63, 93);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 26);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.Text = "Title";
+            // 
+            // bookTitle
+            // 
+            this.bookTitle.Enabled = false;
+            this.bookTitle.Location = new System.Drawing.Point(222, 92);
+            this.bookTitle.Name = "bookTitle";
+            this.bookTitle.Size = new System.Drawing.Size(219, 26);
+            this.bookTitle.TabIndex = 13;
             // 
             // BookView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 622);
+            this.Controls.Add(this.bookTitle);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pageText);
             this.Controls.Add(this.gotoPage);
             this.Controls.Add(this.textBox4);
@@ -183,5 +204,7 @@ namespace MiniKindleApp
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox gotoPage;
         private System.Windows.Forms.TextBox pageText;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox bookTitle;
     }
 }
