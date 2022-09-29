@@ -47,10 +47,16 @@ namespace MiniKindleApp
         public List<int> Bookmarks
         {
             get => _bookmarks;
-            set
-            {
-                _bookmarks = value;
-            }
+        }
+
+        public void AddBookmark(int bm)
+        {
+            _bookmarks.Add(bm);
+        }
+
+        public void RemoveBookmark(int bm)
+        {
+            _bookmarks.Remove(bm);
         }
 
         //public string BookName { get => title; set => title = value; }

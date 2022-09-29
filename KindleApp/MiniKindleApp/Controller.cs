@@ -131,5 +131,15 @@ namespace MiniKindleApp
         {
             selectedBook.CurrentPage--;
         }
+
+        public void SetBookMark()
+        {
+            selectedBook.AddBookmark(selectedBook.CurrentPage);
+        }
+
+        public void RemoveBookMark()
+        {
+            selectedBook.RemoveBookmark(selectedBook.CurrentPage);
+        }
     }
 }

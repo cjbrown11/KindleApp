@@ -34,20 +34,19 @@ namespace MiniKindleApp
             this.goToPageButton = new System.Windows.Forms.Button();
             this.setMarkButton = new System.Windows.Forms.Button();
             this.nextPageButton = new System.Windows.Forms.Button();
-            this.bookViewBox = new System.Windows.Forms.ListBox();
             this.pageNumber = new System.Windows.Forms.TextBox();
             this.bookMark = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.gotoPage = new System.Windows.Forms.TextBox();
+            this.pageText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(15, 349);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2);
+            this.backButton.Location = new System.Drawing.Point(22, 537);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(38, 40);
+            this.backButton.Size = new System.Drawing.Size(57, 62);
             this.backButton.TabIndex = 0;
             this.backButton.Text = "<<";
             this.backButton.UseVisualStyleBackColor = true;
@@ -55,10 +54,9 @@ namespace MiniKindleApp
             // 
             // removeMarkButton
             // 
-            this.removeMarkButton.Location = new System.Drawing.Point(78, 349);
-            this.removeMarkButton.Margin = new System.Windows.Forms.Padding(2);
+            this.removeMarkButton.Location = new System.Drawing.Point(117, 537);
             this.removeMarkButton.Name = "removeMarkButton";
-            this.removeMarkButton.Size = new System.Drawing.Size(64, 40);
+            this.removeMarkButton.Size = new System.Drawing.Size(96, 62);
             this.removeMarkButton.TabIndex = 1;
             this.removeMarkButton.Text = "Remove Bookmark";
             this.removeMarkButton.UseVisualStyleBackColor = true;
@@ -66,10 +64,9 @@ namespace MiniKindleApp
             // 
             // goToPageButton
             // 
-            this.goToPageButton.Location = new System.Drawing.Point(162, 349);
-            this.goToPageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.goToPageButton.Location = new System.Drawing.Point(243, 537);
             this.goToPageButton.Name = "goToPageButton";
-            this.goToPageButton.Size = new System.Drawing.Size(62, 21);
+            this.goToPageButton.Size = new System.Drawing.Size(93, 32);
             this.goToPageButton.TabIndex = 2;
             this.goToPageButton.Text = "Go To Page";
             this.goToPageButton.UseVisualStyleBackColor = true;
@@ -77,10 +74,9 @@ namespace MiniKindleApp
             // 
             // setMarkButton
             // 
-            this.setMarkButton.Location = new System.Drawing.Point(247, 349);
-            this.setMarkButton.Margin = new System.Windows.Forms.Padding(2);
+            this.setMarkButton.Location = new System.Drawing.Point(370, 537);
             this.setMarkButton.Name = "setMarkButton";
-            this.setMarkButton.Size = new System.Drawing.Size(60, 40);
+            this.setMarkButton.Size = new System.Drawing.Size(90, 62);
             this.setMarkButton.TabIndex = 3;
             this.setMarkButton.Text = "Set Bookmark";
             this.setMarkButton.UseVisualStyleBackColor = true;
@@ -88,86 +84,85 @@ namespace MiniKindleApp
             // 
             // nextPageButton
             // 
-            this.nextPageButton.Location = new System.Drawing.Point(336, 349);
-            this.nextPageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.nextPageButton.Location = new System.Drawing.Point(504, 537);
             this.nextPageButton.Name = "nextPageButton";
-            this.nextPageButton.Size = new System.Drawing.Size(39, 40);
+            this.nextPageButton.Size = new System.Drawing.Size(58, 62);
             this.nextPageButton.TabIndex = 4;
             this.nextPageButton.Text = ">>";
             this.nextPageButton.UseVisualStyleBackColor = true;
             this.nextPageButton.Click += new System.EventHandler(this.nextPageButton_Click);
             // 
-            // bookViewBox
-            // 
-            this.bookViewBox.FormattingEnabled = true;
-            this.bookViewBox.Location = new System.Drawing.Point(15, 71);
-            this.bookViewBox.Margin = new System.Windows.Forms.Padding(2);
-            this.bookViewBox.Name = "bookViewBox";
-            this.bookViewBox.Size = new System.Drawing.Size(358, 264);
-            this.bookViewBox.TabIndex = 5;
-            this.bookViewBox.SelectedIndexChanged += new System.EventHandler(this.bookViewBox_SelectedIndexChanged);
-            // 
             // pageNumber
             // 
             this.pageNumber.Enabled = false;
-            this.pageNumber.Location = new System.Drawing.Point(148, 12);
+            this.pageNumber.Location = new System.Drawing.Point(222, 18);
+            this.pageNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pageNumber.Name = "pageNumber";
-            this.pageNumber.Size = new System.Drawing.Size(100, 20);
+            this.pageNumber.Size = new System.Drawing.Size(148, 26);
             this.pageNumber.TabIndex = 6;
-            this.pageNumber.TextChanged += new System.EventHandler(this.pageNumber_TextChanged);
             // 
             // bookMark
             // 
             this.bookMark.Enabled = false;
-            this.bookMark.Location = new System.Drawing.Point(148, 38);
+            this.bookMark.Location = new System.Drawing.Point(222, 58);
+            this.bookMark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bookMark.Name = "bookMark";
-            this.bookMark.Size = new System.Drawing.Size(100, 20);
+            this.bookMark.Size = new System.Drawing.Size(148, 26);
             this.bookMark.TabIndex = 7;
-            this.bookMark.TextChanged += new System.EventHandler(this.bookMark_TextChanged);
             // 
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(42, 12);
+            this.textBox3.Location = new System.Drawing.Point(63, 18);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(148, 26);
             this.textBox3.TabIndex = 8;
             this.textBox3.Text = "Page Number";
             // 
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(42, 38);
+            this.textBox4.Location = new System.Drawing.Point(63, 58);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(148, 26);
             this.textBox4.TabIndex = 9;
             this.textBox4.Text = "BookMark";
             // 
             // gotoPage
             // 
-            this.gotoPage.Location = new System.Drawing.Point(162, 375);
+            this.gotoPage.Location = new System.Drawing.Point(243, 577);
+            this.gotoPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gotoPage.Name = "gotoPage";
-            this.gotoPage.Size = new System.Drawing.Size(62, 20);
+            this.gotoPage.Size = new System.Drawing.Size(91, 26);
             this.gotoPage.TabIndex = 10;
-            this.gotoPage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // pageText
+            // 
+            this.pageText.Location = new System.Drawing.Point(86, 121);
+            this.pageText.Multiline = true;
+            this.pageText.Name = "pageText";
+            this.pageText.Size = new System.Drawing.Size(413, 375);
+            this.pageText.TabIndex = 11;
+            this.pageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BookView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 404);
+            this.ClientSize = new System.Drawing.Size(600, 622);
+            this.Controls.Add(this.pageText);
             this.Controls.Add(this.gotoPage);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.bookMark);
             this.Controls.Add(this.pageNumber);
-            this.Controls.Add(this.bookViewBox);
             this.Controls.Add(this.nextPageButton);
             this.Controls.Add(this.setMarkButton);
             this.Controls.Add(this.goToPageButton);
             this.Controls.Add(this.removeMarkButton);
             this.Controls.Add(this.backButton);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookView";
             this.Text = "BookView";
             this.ResumeLayout(false);
@@ -182,11 +177,11 @@ namespace MiniKindleApp
         private System.Windows.Forms.Button goToPageButton;
         private System.Windows.Forms.Button setMarkButton;
         private System.Windows.Forms.Button nextPageButton;
-        private System.Windows.Forms.ListBox bookViewBox;
         private System.Windows.Forms.TextBox pageNumber;
         private System.Windows.Forms.TextBox bookMark;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox gotoPage;
+        private System.Windows.Forms.TextBox pageText;
     }
 }

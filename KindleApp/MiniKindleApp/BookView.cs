@@ -16,6 +16,8 @@ namespace MiniKindleApp
 
         private int pages;
 
+        private List<int> bookmarks = new List<int>();
+
         public BookView(LibraryView view)
         {
             InitializeComponent();
@@ -23,8 +25,11 @@ namespace MiniKindleApp
             bm = (BookModel)view.bookListView.SelectedItem;
             pages = bm.Pages;
             pageNumber.Text = bm.CurrentPage.ToString();
-            if(bm.CurrentPage == 1) backButton.Enabled = false;
+            pageText.Text = bm.Title;
+            if (bm.CurrentPage == 1) backButton.Enabled = false;
             if (bm.CurrentPage == bm.Pages) nextPageButton.Enabled = false;
+            bookmarks = bm.Bookmarks;
+            check_Bookmark();
         }
 
         public void SetController(HandleEventsDel c)
@@ -65,7 +70,8 @@ namespace MiniKindleApp
         {
             handleDel(State.PAGEBACKWARDS, "");
             this.pageNumber.Text = (Int32.Parse(this.pageNumber.Text) - 1).ToString();
-            if (this.pageNumber.Text  == "1")
+            check_Bookmark();
+            if (this.pageNumber.Text == "1")
             {
                 backButton.Enabled = false;
             }
@@ -78,12 +84,14 @@ namespace MiniKindleApp
         private void removeMarkButton_Click(object sender, EventArgs e)
         {
             handleDel(State.REMOVEBOOKMARK, "");
+            bookmarks.Remove(Int32.Parse(this.pageNumber.Text));
+            check_Bookmark();
+            //numMarks--;
         }
 
         private void goToPageButton_Click(object sender, EventArgs e)
         {
             handleDel(State.GOTOPAGE, "");
-            
             if (Int32.Parse(gotoPage.Text) <= pages && Int32.Parse(gotoPage.Text) > 0)
             {
                 this.pageNumber.Text = gotoPage.Text;
@@ -92,14 +100,24 @@ namespace MiniKindleApp
 
         private void setMarkButton_Click(object sender, EventArgs e)
         {
-            handleDel(State.SETBOOKMARK, "");
-
+            if (bookmarks.Count == 5)
+            {
+                MessageBox.Show("Cannot have more than 5 bookmarks");
+            }
+            else
+            {
+                handleDel(State.SETBOOKMARK, "");
+                bookmarks.Add(Int32.Parse(this.pageNumber.Text));
+                check_Bookmark();
+                //numMarks++;
+            }
         }
 
         private void nextPageButton_Click(object sender, EventArgs e)
         {
             handleDel(State.PAGEFORWARDS, "");
             this.pageNumber.Text = (Int32.Parse(this.pageNumber.Text) + 1).ToString();
+            check_Bookmark();
             backButton.Enabled = true;
             if (pageNumber.Text == pages.ToString())
             {
@@ -107,24 +125,20 @@ namespace MiniKindleApp
             }
         }
 
-        private void bookViewBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void check_Bookmark()
         {
-
-        }
-
-        private void pageNumber_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bookMark_TextChanged(object sender, EventArgs e)
-        {
-
+            if (bookmarks.Contains(Int32.Parse(this.pageNumber.Text)))
+            {
+                this.bookMark.Text = "Yes";
+                setMarkButton.Enabled = false;
+                removeMarkButton.Enabled = true;
+            }
+            else
+            {
+                this.bookMark.Text = "No";
+                setMarkButton.Enabled = true;
+                removeMarkButton.Enabled = false;
+            }
         }
     }
 }
