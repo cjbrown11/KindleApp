@@ -84,11 +84,16 @@ namespace MiniKindleApp
         {
             handleDel(State.GOTOPAGE, "");
             
+            if (Int32.Parse(gotoPage.Text) <= pages && Int32.Parse(gotoPage.Text) > 0)
+            {
+                this.pageNumber.Text = gotoPage.Text;
+            }
         }
 
         private void setMarkButton_Click(object sender, EventArgs e)
         {
             handleDel(State.SETBOOKMARK, "");
+
         }
 
         private void nextPageButton_Click(object sender, EventArgs e)
@@ -108,6 +113,16 @@ namespace MiniKindleApp
         }
 
         private void pageNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookMark_TextChanged(object sender, EventArgs e)
         {
 
         }

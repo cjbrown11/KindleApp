@@ -39,6 +39,7 @@ namespace MiniKindleApp
             this.bookMark = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.gotoPage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // backButton
@@ -68,7 +69,7 @@ namespace MiniKindleApp
             this.goToPageButton.Location = new System.Drawing.Point(162, 349);
             this.goToPageButton.Margin = new System.Windows.Forms.Padding(2);
             this.goToPageButton.Name = "goToPageButton";
-            this.goToPageButton.Size = new System.Drawing.Size(62, 40);
+            this.goToPageButton.Size = new System.Drawing.Size(62, 21);
             this.goToPageButton.TabIndex = 2;
             this.goToPageButton.Text = "Go To Page";
             this.goToPageButton.UseVisualStyleBackColor = true;
@@ -122,6 +123,7 @@ namespace MiniKindleApp
             this.bookMark.Name = "bookMark";
             this.bookMark.Size = new System.Drawing.Size(100, 20);
             this.bookMark.TabIndex = 7;
+            this.bookMark.TextChanged += new System.EventHandler(this.bookMark_TextChanged);
             // 
             // textBox3
             // 
@@ -141,11 +143,20 @@ namespace MiniKindleApp
             this.textBox4.TabIndex = 9;
             this.textBox4.Text = "BookMark";
             // 
+            // gotoPage
+            // 
+            this.gotoPage.Location = new System.Drawing.Point(162, 375);
+            this.gotoPage.Name = "gotoPage";
+            this.gotoPage.Size = new System.Drawing.Size(62, 20);
+            this.gotoPage.TabIndex = 10;
+            this.gotoPage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // BookView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 404);
+            this.Controls.Add(this.gotoPage);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.bookMark);
@@ -176,5 +187,6 @@ namespace MiniKindleApp
         private System.Windows.Forms.TextBox bookMark;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox gotoPage;
     }
 }
