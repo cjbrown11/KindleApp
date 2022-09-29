@@ -13,14 +13,18 @@ namespace MiniKindleApp
     public partial class BookView : Form
     {
         private HandleEventsDel handleDel;
-        public static LibraryView instance;
+
+        private int pages;
 
         public BookView(LibraryView view)
         {
             InitializeComponent();
             BookModel bm = new BookModel();
             bm = (BookModel)view.bookListView.SelectedItem;
+            pages = bm.Pages;
             pageNumber.Text = bm.CurrentPage.ToString();
+            if(bm.CurrentPage == 1) backButton.Enabled = false;
+            if (bm.CurrentPage == bm.Pages) nextPageButton.Enabled = false;
         }
 
         public void SetController(HandleEventsDel c)
@@ -32,6 +36,12 @@ namespace MiniKindleApp
         {
             switch (state)
             {
+                case State.START:
+                    break;
+                case State.SYNC:
+                    break;
+                case State.OPENBOOK:
+                    break;
                 case State.CLOSEBOOK:
                     break;
                 case State.SETBOOKMARK:
@@ -44,6 +54,8 @@ namespace MiniKindleApp
                     break;
                 case State.PAGEBACKWARDS:
                     break;
+                case State.SELECTBOOK:
+                    break;
                 default:
                     break;
             }
@@ -52,6 +64,15 @@ namespace MiniKindleApp
         private void backButton_Click(object sender, EventArgs e)
         {
             handleDel(State.PAGEBACKWARDS, "");
+            this.pageNumber.Text = (Int32.Parse(this.pageNumber.Text) - 1).ToString();
+            if (this.pageNumber.Text  == "1")
+            {
+                backButton.Enabled = false;
+            }
+            if (this.pageNumber.Text != pages.ToString())
+            {
+                nextPageButton.Enabled = true;
+            }
         }
 
         private void removeMarkButton_Click(object sender, EventArgs e)
@@ -62,6 +83,7 @@ namespace MiniKindleApp
         private void goToPageButton_Click(object sender, EventArgs e)
         {
             handleDel(State.GOTOPAGE, "");
+            
         }
 
         private void setMarkButton_Click(object sender, EventArgs e)
@@ -72,6 +94,12 @@ namespace MiniKindleApp
         private void nextPageButton_Click(object sender, EventArgs e)
         {
             handleDel(State.PAGEFORWARDS, "");
+            this.pageNumber.Text = (Int32.Parse(this.pageNumber.Text) + 1).ToString();
+            backButton.Enabled = true;
+            if (pageNumber.Text == pages.ToString())
+            {
+                nextPageButton.Enabled = false;
+            }
         }
 
         private void bookViewBox_SelectedIndexChanged(object sender, EventArgs e)

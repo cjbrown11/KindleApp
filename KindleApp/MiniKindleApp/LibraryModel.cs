@@ -56,11 +56,11 @@ namespace MiniKindleApp
             string lord = "Lord Of The Rings";
             string hunger = "Hunger Games";
             LordOfTheRings.Title = lord;
-            LordOfTheRings.Pages = 100;
+            LordOfTheRings.Pages = 10;
             HungerGames.Title = hunger;
-            HungerGames.Pages = 69;
+            HungerGames.Pages = 5;
             BattleStarGalactica.Title = "Battle Star Galactica";
-            BattleStarGalactica.Pages = 369;
+            BattleStarGalactica.Pages = 15;
 
             BookList.Add(HungerGames);
             BookList.Add(LordOfTheRings);

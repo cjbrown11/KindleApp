@@ -30,6 +30,7 @@ namespace MiniKindleApp
             Controller controller = new Controller(library, libraryView, libraryView.DisplayState, cloud);
             libraryView.SetController(controller.HandleEvents);
 
+
             Application.Run(libraryView);
         }
     }

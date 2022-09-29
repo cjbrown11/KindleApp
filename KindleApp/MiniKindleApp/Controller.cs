@@ -34,6 +34,8 @@ namespace MiniKindleApp
 
         private BookModel selectedBook;
 
+        private BookView currentBook;
+
         public Controller(LibraryModel m, LibraryView v, DisplayStateDel d, CloudLibrary c)
         {
             libraryModel = m;
@@ -77,6 +79,7 @@ namespace MiniKindleApp
                     break;
                 case State.PAGEBACKWARDS:
                     displayDel(State.PAGEBACKWARDS);
+                    PageBackward();
                     break;
                 case State.SELECTBOOK:
                     displayDel(State.SELECTBOOK);
@@ -112,14 +115,21 @@ namespace MiniKindleApp
             else
             {
                 BookView bookview = new BookView(libraryView);
-                bookview.ShowDialog();
+                currentBook = bookview;
                 selectedBook = (BookModel)libraryView.bookListView.SelectedItem;
+                bookview.SetController(this.HandleEvents);
+                bookview.ShowDialog();
             }
         }
 
         public void PageForward()
         {
             selectedBook.CurrentPage++;
+        }
+
+        public void PageBackward()
+        {
+            selectedBook.CurrentPage--;
         }
     }
 }
